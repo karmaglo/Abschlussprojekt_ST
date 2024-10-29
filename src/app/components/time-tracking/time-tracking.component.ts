@@ -1,12 +1,12 @@
+//  logic for the time tracking component.
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-time-tracking',
-  standalone: true,
-  imports: [],
   templateUrl: './time-tracking.component.html',
-  styleUrl: './time-tracking.component.css'
+  styleUrls: ['./time-tracking.component.css'],
+  standalone: true
 })
 export class TimeTrackingComponent {
-
+  constructor() { }
 }

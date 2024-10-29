@@ -1,1 +1,47 @@
 <p>leave works!</p>
+<div class="container">
+  <h2>Leave Request</h2>
+  <form [formGroup]="leaveForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="startDate">Start Date</label>
+      <input type="date" id="startDate" formControlName="startDate" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="endDate">End Date</label>
+      <input type="date" id="endDate" formControlName="endDate" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="leaveType">Leave Type</label>
+      <select id="leaveType" formControlName="leaveType" class="form-control">
+        <option value="vacation">Vacation</option>
+        <option value="sick">Sick Leave</option>
+        <option value="personal">Personal Leave</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="reason">Reason</label>
+      <textarea id="reason" formControlName="reason" class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!leaveForm.valid">Submit Request</button>
+  </form>
+
+  <h3>Leave Requests</h3>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Type</th>
+      <th>Reason</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let request of leaveRequests">
+      <td>{{ request.startDate }}</td>
+      <td>{{ request.endDate }}</td>
+      <td>{{ request.leaveType }}</td>
+      <td>{{ request.reason }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
