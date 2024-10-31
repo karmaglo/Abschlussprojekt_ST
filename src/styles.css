@@ -10,13 +10,13 @@ body {
 }
 
 .btn-primary {
-  background-color: #007bff;
-  border-color: #007bff;
+  background-color: #0181db;
+  border-color: #0181db;
 }
 
 .btn-primary:hover {
-  background-color: #0056b3;
-  border-color: #0056b3;
+  background-color: #0181db;
+  border-color: #0181db;
 }
 
 .card {
@@ -32,7 +32,7 @@ body {
   max-width: 200px; /* Adjust the width as needed */
 }
 .custom-blue {
-  color: #007bff !important;
+  color: #0181db !important;
   font-weight: bold;
 
 }

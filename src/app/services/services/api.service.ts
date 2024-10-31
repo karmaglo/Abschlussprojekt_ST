@@ -10,5 +10,6 @@ export class ApiService {
 
   get(url: string): Observable<any> {
     return this.http.get(url);
+
   }
 }

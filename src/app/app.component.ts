@@ -11,7 +11,6 @@ import { LoginComponent } from './components/login/login.component';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { provideRouter, Routes } from '@angular/router';
 
-// Define the AppComponent
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -32,7 +31,6 @@ export class AppComponent {
   title = 'SalesTime - Zeiterfassung';
 }
 
-// Define routes
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
@@ -44,7 +42,6 @@ export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
 
-// Bootstrap the application
 bootstrapApplication(AppComponent, {
   providers: [provideRouter(routes)]
 });
