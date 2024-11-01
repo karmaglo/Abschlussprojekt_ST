@@ -29,10 +29,18 @@ body {
 }
 
 .img-fluid {
-  max-width: 200px; /* Adjust the width as needed */
+  max-width: 200px;
 }
 .custom-blue {
   color: #0181db !important;
   font-weight: bold;
+
+}
+
+logo-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 10px;
 
 }
