@@ -9,6 +9,7 @@ import { EmployeeManagementComponent } from './components/employee-management/em
 import { ReportsComponent } from './components/reports/reports.component';
 import { HomeComponent } from './components/home/home.component';
 
+
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
@@ -17,8 +18,9 @@ export const routes: Routes = [
   { path: 'vacation', component: VacationComponent },
   { path: 'employee-management', component: EmployeeManagementComponent },
   { path: 'reports', component: ReportsComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' }, // standard redirect  'home'
+  { path: '**', redirectTo: 'home' } ,// Wildcard-Route for all not defined routes
   { path: 'home', component: HomeComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
 
 export const AppRoutingModule = RouterModule.forRoot(routes);

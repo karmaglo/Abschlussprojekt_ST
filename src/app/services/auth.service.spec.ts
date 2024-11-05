@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ExternalAuthService } from './external-auth.service';
+import { ExternalAuthService } from './auth.service';
 
 describe('ExternalAuthService', () => {
   let service: ExternalAuthService;

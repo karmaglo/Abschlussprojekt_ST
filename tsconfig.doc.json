@@ -1,3 +1,11 @@
 {
-  "include": ["src/**/*.ts"]
+  "title": "Entwicklerdokumentation: Zeiterfassung - SalesTime",
+  "includes": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "src/app/components/user-roles/**/*"
+  ],
+  "hideGenerator": true,
+  "disableSourceCode": true
 }

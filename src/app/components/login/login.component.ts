@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../../services/services/auth.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -9,22 +9,36 @@ import { AuthService } from '../../services/services/auth.service';
   styleUrls: ['./login.component.css'],
   standalone: true,
   imports: [FormsModule],
-  providers: [AuthService] // Provide AuthService here
+  providers: [AuthService]
 })
 export class LoginComponent {
-  email: string = '';
-  password: string = '';
+  email: string = ''; // Variable to store the email input
+  password: string = ''; // Variable to store the password input
 
   constructor(private authService: AuthService, private router: Router) {}
 
+  // Method to handle form submission
   onSubmit() {
+    // Call the login method from AuthService and subscribe to the response
     this.authService.login(this.email, this.password).subscribe(
-      (response: any) => {
-        console.log('Login successful', response);
-        this.router.navigate(['/dashboard']);
+      (response: { loginState: string }) => {
+        // Update the login state in AuthService
+        this.authService.loginState = response.loginState;
+        console.log('Login', response.loginState);
+
+        // Navigate to the dashboard if login is successful
+        if (response.loginState === 'LOGGED_IN') {
+          this.router.navigate(['/dashboard']);
+          alert('Login successful');
+        } else {
+          // Show an alert if login fails
+          alert('Login failed');
+        }
       },
-      (error: any) => {
-        console.error('Login failed', error);
+      (error) => {
+        // Handle any errors that occur during login
+        console.error('Login error', error);
+        alert('An error occurred during login.');
       }
     );
   }
